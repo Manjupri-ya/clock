@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>clock</title>
+        <link rel="stylesheet" href="clock.css">
+
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="display">
+            <div id="time"></div>
+
+            </div>
+            
+    <span></span>
+    <script>
+        setInterval(()=>{
+            const time=
+            document.querySelector("#time");
+            let date = new Date();
+            let hours = date.getHours();
+            let minutues = date.getMinutes();
+            let seconds = date.getSeconds();
+            let day_nightt = "AM"
+            if(hours>12){
+            day_nightt= "pM"
+                hours = hours - 12;
+
+            }
+            if(hours<10){
+             hours = "0" + hours}
+             if(minutues<10){
+             minutues = "0" + minutues}
+             if(seconds<10){
+             seconds = "0" + seconds}
+            time.textContent = hours + ":" + minutues +  ":" + seconds + "" + day_nightt;
+        })
+    </script>
+        </body>
+</html>
